@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @chirp = Post.new(chirp_params)
     current_user.posts << @chirp
     if @chirp.save
-      render json: @chirp, serializer: PostSerializer
+      render json: @chirp
     else
       render json: { error: @user.errors.full_messages }, status: 400
     end
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   private
   def chirp_params
-    params.permit(:body, :token)
+    params.permit(:body)
   end
 
 end
