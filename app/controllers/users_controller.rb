@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def root
-    render "Hi There!"
+    render json: "Hi There!"
+
   end
 
   def create
