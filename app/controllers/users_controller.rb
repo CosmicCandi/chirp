@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def root
+    render "Hi There!"
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
