@@ -9,4 +9,13 @@ class PostsController < ApplicationController
     render json: @chirps, scope: current_user, scope_name: :current_user
   end
 
+  def create
+    @chirp = Chirp.create!
+    if @chirp.save
+      render json: @chirp, serializer: PostSerializer
+    else
+
+    end
+  end
+
 end
