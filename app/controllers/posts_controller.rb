@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   private
   def chirp_params
-    params.permit(:body)
+    params.permit(:body, :token)
   end
 
 end
