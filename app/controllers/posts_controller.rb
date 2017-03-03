@@ -10,12 +10,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @chirp = Chirp.create!
+    @chirp = Chirp.create!(chirp_params)
     if @chirp.save
       render json: @chirp, serializer: PostSerializer
     else
 
     end
   end
+
+  private
+  permit.params(:body, :token, :username)
+
 
 end
