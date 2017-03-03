@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @chirp = Chirp.new(chirp_params)
+    @chirp = Post.new(chirp_params)
     current_user.posts << @chirp
     if @chirp.save
       render json: @chirp, serializer: PostSerializer
