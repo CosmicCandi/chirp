@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    render json: "Hi There!"
+    render json: "Hi There!", status: 200
   end
 
   def create
