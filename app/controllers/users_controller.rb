@@ -25,6 +25,13 @@ class UsersController < ApplicationController
   end
 
   def unfollow
+    target_user = User.find_by(username: params[:username])
+    if current_user.follows?(target_user)
+      current_user.unfollow!(target_user)
+      render json: { message: "#{target_user.username} has been unfollowed.", status: 200 }
+    else
+      render json: { message: "#{current_user.username} is not following #{target_user.username}.", status: 200 }
+    end
   end
 
   private

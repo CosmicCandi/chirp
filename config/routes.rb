@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'create' => 'users#create'
   post 'login' => 'sessions#login'
   post 'users/follow/:username' => 'users#follow'
+  post 'users/unfollow/:username' => 'users#unfollow'
 
   #Chirp Endpoints
   get 'chirps' => 'posts#index'
