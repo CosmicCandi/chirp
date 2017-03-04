@@ -15,14 +15,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def follow
-    @user = current_user
-    target_user = User.find_by(params[:username])
-    if current_user.follows?(target_user)
-    else
-      render json: {""}
-    end
-  end
+  # def follow
+  #   @user = current_user
+  #   target_user = User.find_by(params[:username])
+  #   if current_user.follows?(target_user)
+  #   else
+  #     render json: {""}
+  #   end
+  # end
 
   def unfollow
   end
