@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if @user
       render json: @user, serializer: UserExpandedSerializer
     else
-      render json: ["You must be signed in to view this page."], status: 401
+      render json: ["Username or password incorrect. Please verify your details and try again."], status: 401
     end
   end
 
