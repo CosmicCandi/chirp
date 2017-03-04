@@ -16,11 +16,10 @@ class UsersController < ApplicationController
   end
 
   def follow
-    current_user = User.find_by(params[:token])
     target_user = User.find_by(params[:username])
     unless current_user.follows?(target_user)
       current_user.follow!(target_user)
-      render json: "#{target_user} has been followed.", status: 200
+      render json: "#{target_user.username} has been followed.", status: 200
     else
       render json: "#{current_user.username} is already following #{target_user.username}.", status: 200
     end
