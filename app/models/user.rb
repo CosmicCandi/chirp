@@ -12,7 +12,7 @@ validates :username, :first_name, :last_name, presence: true
 validates :username, uniqueness: true
 
   def avatar
-    image.blank? ? `<img src="../img/placeholder.JPG"` : image
+    image.blank? ? `<img src="../img/placeholder.JPG">` : image
   end
 
 end
