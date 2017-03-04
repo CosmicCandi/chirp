@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def follow
-    @current_user = User.find_by(params[:token])
+    current_user = User.find_by(params[:token])
     target_user = User.find_by(params[:username])
     unless current_user.follows?(target_user)
       current_user.follow!(target_user)
