@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#login'
   post 'users/follow/:username' => 'users#follow'
   post 'users/unfollow/:username' => 'users#unfollow'
+  post 'users/logout' => 'sessions#signout'
 
   #Chirp Endpoints
   get 'chirps' => 'posts#index'

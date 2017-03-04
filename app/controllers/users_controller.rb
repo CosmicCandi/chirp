@@ -18,9 +18,9 @@ class UsersController < ApplicationController
     target_user = User.find_by(username: params[:username])
     unless current_user.follows?(target_user)
       current_user.follow!(target_user)
-      render json: { message: "#{target_user.username} has been followed.", status: 200 }
+      render json: ["#{target_user.username} has been followed."], status: 200
     else
-      render json: { message: "#{current_user.username} is already following #{target_user.username}.", status: 200 }
+      render json: ["#{current_user.username} is already following #{target_user.username}."], status: 200
     end
   end
 
@@ -28,9 +28,9 @@ class UsersController < ApplicationController
     target_user = User.find_by(username: params[:username])
     if current_user.follows?(target_user)
       current_user.unfollow!(target_user)
-      render json: { message: "#{target_user.username} has been unfollowed.", status: 200 }
+      render json: [ "#{target_user.username} has been unfollowed."], status: 200
     else
-      render json: { message: "#{current_user.username} is not following #{target_user.username}.", status: 200 }
+      render json: ["#{current_user.username} is not following #{target_user.username}."], status: 200
     end
   end
 

@@ -10,4 +10,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  def signout
+    render json: ["#{current_user.username} has been logged out."], status: 200
+
+  end
+
 end
