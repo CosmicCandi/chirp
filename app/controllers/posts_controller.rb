@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :require_user
+
   def index
     if current_user
       @chirps = Post.timeline(current_user)

@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::API
 
-  before_action :require_user
-
   private
     def current_user
       @current_user ||= User.find_by(token: params[:token]) if params[:token]
