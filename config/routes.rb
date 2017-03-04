@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   #Chirp Endpoints
   get 'chirps' => 'posts#index'
   post 'chirps/create' => 'posts#create'
-  get 'chirps1rHGsZjoQ1KEGCcWvqTSXoXF' => 'posts#chirps'
 
 
 

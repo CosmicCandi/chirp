@@ -19,10 +19,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def chirps
-    render json: 'Hello Ragen', status: 200
-  end
-
   private
   def chirp_params
     params.permit(:body)
