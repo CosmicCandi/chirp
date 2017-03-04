@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @users = User.all
     render json: @users, status: 200
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def follow
-    target_user = User.find_by(params[:username])
+    target_user = User.find_by(username: params[:username])
     unless current_user.follows?(target_user)
       current_user.follow!(target_user)
       render json: { message: "#{target_user.username} has been followed.", status: 200 }
@@ -33,5 +32,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:username, :first_name, :last_name, :image, :password, :password_confirmation)
   end
-Yes
 end
