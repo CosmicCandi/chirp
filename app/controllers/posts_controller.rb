@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     if @chirp.save
       render json: @chirp
     else
-      render json: { error: @user.errors.full_messages }, status: 400
+      render json: [ error: @chirp.errors.full_messages ], status: 400
     end
   end
 
