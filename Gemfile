@@ -35,25 +35,7 @@ gem 'rack-cors'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution adef paginate
-    #Pseudo Code for Pagination
-    @chirps = Post.timeline(paginate_params, current_user)
-    paginate = nil
-    unless paginate == nil
-      render json: @chirps
-    else
-      until @chirps.count / params[:limit] <= 0 do
-        @chirps.collect limit(params[:limit])
-
-      end
-    # Start the rendering of the pagination
-    #  Get the limit from the user
-    #    @limit = params[:limit]
-    #  Get the offset from the user
-    #    @offset = params[:offset]
-    #  Run calculations for offset by page
-    #  @offset = (params[:page] - 1 * params[:offset])
-    #  render json: paginationnd get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_girl_rails'
   gem 'shoulda'
