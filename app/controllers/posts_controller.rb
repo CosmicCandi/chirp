@@ -2,6 +2,12 @@ class PostsController < ApplicationController
 
   before_action :require_user
 
+  def paginate
+    @chirps = Post.timeline(current_user)
+    @chirps.count
+    paginate = chirps.count
+  end
+
   def index
     if current_user
       @chirps = Post.timeline(current_user)

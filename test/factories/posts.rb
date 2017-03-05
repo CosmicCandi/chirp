@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :post do
     body "MyText"
-    user nil
+    user_id "MyInteger"
   end
 end
