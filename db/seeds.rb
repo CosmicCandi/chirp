@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do
+100.times do
   rand_user = [Faker::StarWars.planet, Faker::StarWars.specie, Faker::LordOfTheRings.character, Faker::Pokemon.name, Faker::Superhero.descriptor]
 
   @user = User.create!(
@@ -17,7 +17,7 @@
     image: Faker::Avatar.image
   )
 
-  rand(1..10).times do
+  rand(1..75).times do
     @post = Post.create!(
     body: Faker::StarWars.quote,
     user: @user
