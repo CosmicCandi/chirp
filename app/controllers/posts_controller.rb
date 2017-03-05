@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def paginate
-    @chirps = Post.timeline(current_user).page(params[:page])
+    @chirps = Post.timeline(current_user).order("created_at DESC").page(params[:page])
     render json: @chirps, status: 200
   end
 
