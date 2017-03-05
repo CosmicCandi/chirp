@@ -23,6 +23,7 @@ gem 'pry-rails'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'socialization'
+gem 'kaminari'
 
 
 # Use Capistrano for deployment
