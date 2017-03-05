@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     render json: @chirps, scope: current_user, scope_name: :current_user
   end
 
+  def paginate
+    @chirps = Post.timeline(current.user).page(params[:page])
+  end
+
   def create
     @chirp = Post.new(chirp_params)
     current_user.posts << @chirp
@@ -25,5 +29,5 @@ class PostsController < ApplicationController
   def chirp_params
     params.permit(:body)
   end
-  
+
 end
