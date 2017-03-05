@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def paginate
-    @chirps = Post.timeline(current.user).page(params[:page])
+    @chirps = Post.timeline(current_user).page(params[:page])
   end
 
   def create
