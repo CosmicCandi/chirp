@@ -12,7 +12,7 @@ validates :username, :first_name, :last_name, presence: true
 validates :username, uniqueness: true
 
   def avatar
-    image.blank? ? "https://github.com/RagenS9/chirp/commit/3969a24a79e0fda25b3dd3ceaf71f4edc3a2af78#diff-ce4218f18ff906974daacb1e5f091161" : image
+    image.blank? ? "" : image
   end
 
 end
