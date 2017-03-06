@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 Routes Documentation
 
 * Create a User
@@ -104,3 +81,53 @@ Routes Documentation
  ERRORS:
  N/A
 =========
+* Follow a User
+POST /users/follow/:username
+ https://sleepy-gorge-91783.herokuapp.com/users/follow/:username
+
+ Follows a target user.
+
+ Requires:
+ :username (username to be followed)
+ :token (current user's token)
+
+ RETURNS:
+  [`current_user has followed target_user`], Status 200
+
+ ERRORS:
+  [`current_user is already following target_user`], Status 200
+=========
+
+* POST /users/unfollow/:username
+ https://sleepy-gorge-91783.herokuapp.com/users/unfollow/:username
+
+ Unfollows a target user.
+
+ Requires:
+ :username (username to be unfollowed)
+ :token (current user's token)
+
+ RETURNS:
+  [`current_user has unfollowed target_user`], Status 200
+
+ ERRORS:
+  [`current_user is not following target_user`], Status 200
+=========
+
+* GET /chirps/paginate/:page
+https://sleepy-gorge-91783.herokuapp.com/chirps
+
+Requires:
+ :token (current user's token)
+ :page (starts at 1, default results per page 25, if it exceeds the user's posts, will return null)
+
+Returns:
+ * A list of the logged-in user's timeline ordered by most recent post.
+
+ERRORS:
+* If no token is provided it will return a JSON formatted message of "You must be logged in to do this."
+
+STATUS: 200
+
+ERRORS:
+ N/A
