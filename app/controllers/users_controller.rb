@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.image.blank?
-      user.image = "https://raw.githubusercontent.com/RagenS9/chirp/3969a24a79e0fda25b3dd3ceaf71f4edc3a2af78/img/placeholder.JPG"
+      @user.image = "https://raw.githubusercontent.com/RagenS9/chirp/3969a24a79e0fda25b3dd3ceaf71f4edc3a2af78/img/placeholder.JPG"
     end
 
     if @user.save
