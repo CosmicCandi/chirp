@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def timeline
-    @chirps = Post.timeline.order("created_at DESC")
+    @chirps = Post.all.order("created_at DESC")
     render json: @chirps, status: 200
   end
 
