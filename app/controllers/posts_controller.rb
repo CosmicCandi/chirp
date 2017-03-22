@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_user, except: [:timeline]
+  before_action :require_user, except: :timeline
 
   def index
     if current_user

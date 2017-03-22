@@ -114,6 +114,21 @@ POST /users/follow/:username
   [`current_user is not following target_user`], Status 200
 =========
 
+* GET /chirps/timeline
+
+Requires:
+Does not require any parameters
+
+Optional:
+No optional parameters
+
+ERRORS:
+No specific error messages.
+
+Returns a list of all chirps on the site.
+
+=========
+
 * GET /chirps/paginate/:page
 https://sleepy-gorge-91783.herokuapp.com/chirps
 
