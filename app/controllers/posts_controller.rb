@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_user
+  before_action :require_user, except: [:timeline]
 
   def index
     if current_user
@@ -22,6 +22,10 @@ class PostsController < ApplicationController
     else
       render json: [ error: @chirp.errors.full_messages ], status: 400
     end
+  end
+
+  def timeline
+    @chirps = Post.all.order("created_at DESC")
   end
 
   private
