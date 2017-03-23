@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post 'chirps/create' => 'posts#create'
   get 'chirps/timeline' => 'posts#timeline'
   get 'chirps/paginate/:page' => 'posts#paginate'
+  get 'chirps/show/:id' => 'posts#show'
   #Follower Endpoints
 
 end
