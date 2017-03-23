@@ -9,13 +9,13 @@ class PostsController < ApplicationController
     render json: @chirps, scope: current_user, scope_name: :current_user
   end
 
-  def show
-    if current_user
-      @chirp = Post.find(params[:id])
-      render json: @chirp
-    else
-      render json: [error: @chirp.errors.full_messages], status: 400
-    end
+  # def show
+  #   if current_user
+  #     @chirp = Post.find(params[:id])
+  #     render json: @chirp
+  #   else
+  #     render json: [error: @chirp.errors.full_messages], status: 400
+  #   end
 
   def paginate
     @chirps = Post.timeline(current_user).order("created_at DESC").page(params[:page])
